@@ -1,7 +1,7 @@
 #Image Deduplication In Python
 
 #####Nii Mante
-	usage: main.py [-h] [-e | -n] [-i DUMP_DIR | -l JSON_METADATA]
+	usage: dedup [-h] [-e | -n] [-i DUMP_DIR | -l JSON_METADATA]
                [-o OUTPUT_JSON] [-d OUTPUT_DIR] [-s] [-j NUM_JOBS]
                [-k BIT_DISTANCE]
 
@@ -48,16 +48,12 @@ The purpose of this program is to deduplicate images! The program gives the opti
 
 ##Install
 
-This program relies on some external modules. Simply install them using pip. 
+Just clone this repository and run the setup.py install
 
-	pip install tika
-	pip install simhash
-	pip install exifread
-	pip install git+https://github.com/uqfoundation/pathos
-	pip install Pillow
-
-Those commands should install the modules globally to your system.
-	
+	git clone https://github.com/nmante/image_deduplication.git
+	cd image_deduplication
+	# You may need to run this setup.py install with sudo
+	python setup.py install
 
 ##Quick Use
 
@@ -76,38 +72,11 @@ The directories will contain a few things
 - Unique images
 - And a folder `_duplicates` with the duplicate images
 	
-
-##Generate Metadata For Near Deduplication
-
-You can generate in two ways:
-
-- Apache Tika Java Plugin
-- Our Program `python main.py`
-
-####Apache Tika Java
-
-There's a program in the `../metadata-dumper/target` directory. This is how you run it.
-
-	java -jar ../metadata-dumper/target/metadata-dumper-0.1-SNAPSHOT-jar-with-dependencies.jar -inputDir <AN_IMAGE_DUMP_DIRECTORY> -output <A_JSON_METADATA_FILE>
-
-This takes a directory of images and outputs a json file for reading the metadata for each image.
-
-Then to use this metadata file with our deduplication program, you would run commands like so:
-
-	# -n for near duplicate, and -l for using a json file
-	python main.py -n -l <A_JSON_METADATA_FILE>
-
-####Our Program
-
-If you don't have apache tika installed, you can use our program to generate metadata. See next section for how to use this
-
-- It uses `PIL` imaging library to grab metadata, and falls back on `tika-py` if `PIL` fails.
-
 ##Large Image Batch Examples
 
 The program **requires** a directory of images. You don't need to worry about the structure of the folder (i.e. subdirectories). If there are images in the directory, the program will find them.
 
-###Using Nutch?
+###(OPTIONAL) Using Nutch?
 
 If you're using Apatche Nutch, generate a dump directory
 
@@ -123,13 +92,13 @@ This dump directory would be what you pass to the deduplication script.
 
 	# Use the -s flag to also show duplicate images
 	# Also split this among 8 jobs with the -j flag
-	python main.py -i <PREVIOUSLY_CREATED_OUTPUT_DUMP_DIR> -d <DEDUP_IMAGE_DIR_TO_CREATE> -s -j 8
+	python main.py -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -j 8
 	
 ####Near duplicate
 
 	# Use the -n flag to do near deduplication
 	# Use the -j flag to split this among 4 jobs
-	python main.py -i <PREVIOUSLY_CREATED_OUTPUT_DUMP_DIR> -d <DEDUP_IMAGE_DIR_TO_CREATE> -s -n -j 4
+	python main.py -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -n -j 4
 
 ##Program Output
 

@@ -1,4 +1,10 @@
-# Byte-compiled / optimized / DLL files
+# Project Specific
+dedup/exact_output.json
+dedup/near_output.json
+dedup/test_output_exact_deduplicated_images/
+dedup/test_output_near_deduplicated_images/ 
+
+#Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class

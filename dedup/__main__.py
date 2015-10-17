@@ -357,7 +357,7 @@ def generate_output(args):
         outfile_name = args.output_json
         print("Writing to image dictionary to file: {}".format(outfile_name))
         with open(outfile_name, 'w') as outfile:
-            json.dump(final_dictionary, outfile, indent=4, skipkeys=True)
+            json.dump(final_dictionary, outfile, indent=4, skipkeys=True, default=str)
 
     # Copy the images to an output directory
     create_output_image_directory(args, final_dictionary)
