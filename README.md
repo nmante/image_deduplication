@@ -1,6 +1,42 @@
 #Image Deduplication In Python
 
 #####Nii Mante
+
+##Overview
+
+The purpose of this program is to deduplicate images! The program gives the option of deduplicating in two styles:
+
+- Near duplicates
+- Exact duplicates                        
+
+##Install
+
+Just clone this repository and run the setup.py install
+
+	git clone https://github.com/nmante/image_deduplication.git
+	cd image_deduplication
+	# You may need to run this setup.py install with sudo
+	python setup.py install
+
+##Quick Use
+
+To try out the program on a few images, you can use the test_images/ directory.  Just run these commands in this `deduplication` directory:
+
+	chmod a+x test.sh
+	./test.sh
+
+This will create two output directories:
+
+	test_output_exact_deduplicated_images/
+	test_output_near_deduplicated_images/
+
+The directories will contain a few things
+
+- Unique images
+- And a folder `_duplicates` with the duplicate images
+
+##Usage
+
 	usage: dedup [-h] [-e | -n] [-i DUMP_DIR | -l JSON_METADATA]
                [-o OUTPUT_JSON] [-d OUTPUT_DIR] [-s] [-j NUM_JOBS]
                [-k BIT_DISTANCE]
@@ -39,38 +75,7 @@
 	                        Difference k between simhash fingerprints
 
 	
-##Overview
 
-The purpose of this program is to deduplicate images! The program gives the option of deduplicating in two styles:
-
-- Near duplicates
-- Exact duplicates                        
-
-##Install
-
-Just clone this repository and run the setup.py install
-
-	git clone https://github.com/nmante/image_deduplication.git
-	cd image_deduplication
-	# You may need to run this setup.py install with sudo
-	python setup.py install
-
-##Quick Use
-
-To try out the program on a few images, you can use the test_images/ directory.  Just run these commands in this `deduplication` directory:
-
-	chmod a+x test.sh
-	./test.sh
-
-This will create two output directories:
-
-	test_output_exact_deduplicated_images/
-	test_output_near_deduplicated_images/
-
-The directories will contain a few things
-
-- Unique images
-- And a folder `_duplicates` with the duplicate images
 	
 ##Large Image Batch Examples
 
