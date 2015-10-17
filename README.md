@@ -17,10 +17,17 @@ Just clone this repository and run the setup.py install
 	cd image_deduplication
 	# You may need to run this setup.py install with sudo
 	python setup.py install
+	
+Once you run that script, try running this command:
+
+	dedup
+
+You should see a help menu on how to use the Command Line Interface!
+
 
 ##Quick Use
 
-To try out the program on a few images, you can use the test_images/ directory.  Just run these commands in this `deduplication` directory:
+To try out the program on a few images, you can use the images/ directory.  Just run these commands in this `deduplication` directory:
 
 	chmod a+x test.sh
 	./test.sh
@@ -97,13 +104,13 @@ This dump directory would be what you pass to the deduplication script.
 
 	# Use the -s flag to also show duplicate images
 	# Also split this among 8 jobs with the -j flag
-	python main.py -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -j 8
+	dedup -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -j 8
 	
 ####Near duplicate
 
 	# Use the -n flag to do near deduplication
 	# Use the -j flag to split this among 4 jobs
-	python main.py -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -n -j 4
+	dedup -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -n -j 4
 
 ##Program Output
 
