@@ -21,9 +21,6 @@ __status__ = "Development"
 def main(run_type=None):
     args, parser = None, create_parser() 
 
-    print(os.path.realpath(__file__))
-    print(os.listdir(os.curdir))
-        
     # We are either running tests or an actual run
     if run_type == 'test_exact':
         args = parser.parse_args('-i images'.split())
