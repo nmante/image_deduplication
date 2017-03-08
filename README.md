@@ -27,7 +27,7 @@ You should see a help menu on how to use the Command Line Interface!
 
 ##Quick Use
 
-To try out the program on a few images, you can use the images/ directory.  Just run these commands in this `deduplication` directory:
+To try out the program on a few images, you can use the images/ directory.  Just run these commands in the `dedup` directory:
 
 	chmod a+x test.sh
 	./test.sh
@@ -61,7 +61,7 @@ The directories will contain a few things
 	                        Use this flag to deduplicate images via a "near"
 	                        deduplication methodology
 	  -i DUMP_DIR, --dump_dir DUMP_DIR
-	                        The absolute path to your dump directory
+	                        The input directory containing your unprocessed images
 	  -l JSON_METADATA, --json_metadata JSON_METADATA
 	                        A jsonlines file containing the filename and tika
 	                        metadata files

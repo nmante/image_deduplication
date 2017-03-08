@@ -46,7 +46,7 @@ def create_parser():
 
     group2 = parser.add_mutually_exclusive_group()
 
-    group2.add_argument('-i', '--dump_dir', help="The absolute path to your dump directory")
+    group2.add_argument('-i', '--dump_dir', help="The input directory containing your unprocessed images")
     group2.add_argument('-l', '--json_metadata', help="A jsonlines file containing the filename and tika metadata files")
 
     parser.add_argument('-o', '--output_json', help="Write the locations and hashes of each deduplicated image to a JSON file. Defaults to 'image_locations.json'") 
