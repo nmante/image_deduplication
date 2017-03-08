@@ -88,11 +88,12 @@ setup(
     install_requires=[
         'simhash',
         'Pillow',
-        'pathos==0.2a1.dev0'
+        'pathos'
+        #'pathos==0.2a1.dev0'
     ],
 
     dependency_links=[
-            'git+https://github.com/uqfoundation/pathos#egg=pathos-0.2a1.dev0'
+            #'git+https://github.com/uqfoundation/pathos#egg=pathos-0.2a1.dev0'
     ],
 
     # List additional groups of dependencies here (e.g. development
