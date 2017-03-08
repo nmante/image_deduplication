@@ -88,7 +88,6 @@ setup(
     install_requires=[
         'simhash',
         'Pillow',
-        'tika',
         'pathos==0.2a1.dev0'
     ],
 
