@@ -1,4 +1,4 @@
-#Image Deduplication In Python
+#Image Deduplication In Python 2.x
 
 #####Nii Mante
 
@@ -11,7 +11,7 @@ The purpose of this program is to deduplicate images! The program gives the opti
 
 ##Install
 
-Just clone this repository and run the setup.py install
+Just clone this repository and run the setup.py install. **NOTE:** *This library was written for Python 2.*
 
 	git clone https://github.com/nmante/image_deduplication.git
 	cd image_deduplication
