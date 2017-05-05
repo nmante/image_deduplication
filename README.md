@@ -1,15 +1,15 @@
-#Image Deduplication In Python 2.x
+# Image Deduplication In Python 2.x
 
-#####Nii Mante
+##### Nii Mante
 
-##Overview
+## Overview
 
 The purpose of this program is to deduplicate images! The program gives the option of deduplicating in two styles:
 
 - Near duplicates
 - Exact duplicates                        
 
-##Install
+## Install
 
 Just clone this repository and run the setup.py install. **NOTE:** *This library was written for Python 2.*
 
@@ -25,7 +25,7 @@ Once you run that script, try running this command:
 You should see a help menu on how to use the Command Line Interface!
 
 
-##Quick Use
+## Quick Use
 
 To try out the program on a few images, you can use the images/ directory.  Just run these commands in the `dedup` directory:
 
@@ -42,7 +42,7 @@ The directories will contain a few things
 - Unique images
 - And a folder `_duplicates` with the duplicate images
 
-##Usage
+## Usage
 
 	usage: dedup [-h] [-e | -n] [-i DUMP_DIR | -l JSON_METADATA]
                [-o OUTPUT_JSON] [-d OUTPUT_DIR] [-s] [-j NUM_JOBS]
@@ -84,11 +84,11 @@ The directories will contain a few things
 	
 
 	
-##Large Image Batch Examples
+## Large Image Batch Examples
 
 The program **requires** a directory of images. You don't need to worry about the structure of the folder (i.e. subdirectories). If there are images in the directory, the program will find them.
 
-###(OPTIONAL) Using Nutch?
+### (OPTIONAL) Using Nutch?
 
 If you're using Apatche Nutch, generate a dump directory
 
@@ -100,19 +100,19 @@ If you're using Apatche Nutch, generate a dump directory
 	
 This dump directory would be what you pass to the deduplication script.
 
-####Exact duplicate
+#### Exact duplicate
 
 	# Use the -s flag to also show duplicate images
 	# Also split this among 8 jobs with the -j flag
 	dedup -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -j 8
 	
-####Near duplicate
+#### Near duplicate
 
 	# Use the -n flag to do near deduplication
 	# Use the -j flag to split this among 4 jobs
 	dedup -i <INPUT_IMAGE_DIR> -d <OUTPUT_IMAGE_DIR_TO_CREATE> -s -n -j 4
 
-##Program Output
+## Program Output
 
 The program outputs a few things:
 
