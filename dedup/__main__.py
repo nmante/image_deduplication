@@ -8,7 +8,8 @@ from pathos.multiprocessing import Pool
 import json
 import shutil
 import imghdr
-from PIL import Image
+from PIL import Image,ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 __author__ = "Nii Mante"
 __license__ = "MIT"
